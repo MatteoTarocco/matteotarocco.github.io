@@ -130,5 +130,3 @@ Software Architect with a solid foundation in full-stack development, artificial
 ## 📫 Contact
 
 Feel free to reach out to discuss opportunities, collaborations, or just to connect!
-
-*This page is powered by GitHub Pages with Jekyll.*
