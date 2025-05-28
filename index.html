@@ -12,16 +12,15 @@ title: Matteo Tarocco - Software Architect
     <style>
         :root {
             --primary: #2563eb;
-            --primary-light: #3b82f6;
-            --gray-50: #f9fafb;
-            --gray-100: #f3f4f6;
-            --gray-600: #4b5563;
-            --gray-800: #1f2937;
-            --gray-900: #111827;
-            --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-            --max-width: 768px;
-            --spacing: 1.5rem;
+            --secondary: #64748b;
+            --accent: #0f172a;
+            --bg: #ffffff;
+            --bg-secondary: #f8fafc;
+            --text: #0f172a;
+            --text-secondary: #64748b;
+            --border: #e2e8f0;
+            --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 4px 6px -1px rgb(0 0 0 / 0.1);
         }
 
         * {
@@ -31,99 +30,208 @@ title: Matteo Tarocco - Software Architect
         }
 
         body {
-            font-family: system-ui, -apple-system, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            color: var(--gray-800);
-            background: var(--gray-50);
-            font-size: 16px;
+            color: var(--text);
+            background: var(--bg);
+        }
+
+        .navbar {
+            background: var(--bg);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 600;
+            font-size: 1.125rem;
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: 1px solid var(--border);
+            padding: 0.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
         }
 
         .container {
-            max-width: var(--max-width);
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 1rem;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 3rem;
         }
 
-        .header {
+        .sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+
+        .profile {
             text-align: center;
-            padding: 3rem 0;
             margin-bottom: 2rem;
         }
 
         .profile-image {
-            width: 120px;
-            height: 120px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
             object-fit: cover;
             margin-bottom: 1rem;
-            border: 3px solid white;
-            box-shadow: var(--shadow-lg);
+            border: 3px solid var(--border);
         }
 
-        h1 {
-            font-size: 2rem;
+        .profile h1 {
+            font-size: 1.875rem;
             font-weight: 700;
-            color: var(--gray-900);
             margin-bottom: 0.5rem;
+            color: var(--accent);
         }
 
-        .subtitle {
-            font-size: 1.125rem;
-            color: var(--gray-600);
-            font-weight: 400;
+        .profile .title {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .profile .bio {
+            font-size: 0.875rem;
+            line-height: 1.5;
+            color: var(--text-secondary);
+            text-align: left;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.875rem;
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .main-content {
+            min-height: 100vh;
         }
 
         .section {
-            background: white;
-            border-radius: 8px;
-            padding: var(--spacing);
-            margin-bottom: var(--spacing);
-            box-shadow: var(--shadow);
+            margin-bottom: 3rem;
         }
 
         .section h2 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .job {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
             margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 0.5rem;
         }
 
-        .job:last-child {
+        .experience-item, .education-item {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .experience-item:last-child, .education-item:last-child {
             margin-bottom: 0;
         }
 
-        .job-title {
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.75rem;
+        }
+
+        .item-title {
             font-size: 1.125rem;
             font-weight: 600;
-            color: var(--gray-900);
-            margin-bottom: 0.25rem;
+            color: var(--accent);
         }
 
-        .company {
+        .item-company {
             color: var(--primary);
             font-weight: 500;
+            font-size: 1rem;
         }
 
-        .date {
-            color: var(--gray-600);
+        .item-date {
+            color: var(--text-secondary);
             font-size: 0.875rem;
-            margin-bottom: 0.5rem;
+            white-space: nowrap;
+            margin-left: 1rem;
         }
 
-        .tech-stack {
-            background: var(--gray-100);
-            padding: 0.75rem;
-            border-radius: 6px;
-            margin: 0.75rem 0;
+        .item-description {
+            color: var(--text-secondary);
             font-size: 0.875rem;
-            border-left: 3px solid var(--primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tech-tag {
+            background: var(--primary);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 500;
         }
 
         .skills-grid {
@@ -132,224 +240,235 @@ title: Matteo Tarocco - Software Architect
             gap: 1rem;
         }
 
-        .skill-group {
-            background: var(--gray-100);
-            padding: 1rem;
-            border-radius: 6px;
+        .skill-category {
+            background: var(--bg-secondary);
+            padding: 1.25rem;
+            border-radius: 8px;
+            border-top: 3px solid var(--primary);
         }
 
-        .skill-group h4 {
+        .skill-category h4 {
             font-size: 0.875rem;
             font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
+            color: var(--accent);
+            margin-bottom: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 0.05em;
         }
 
         .skill-list {
             list-style: none;
-            font-size: 0.875rem;
         }
 
         .skill-list li {
             padding: 0.125rem 0;
-            color: var(--gray-600);
+            color: var(--text-secondary);
+            font-size: 0.875rem;
         }
 
-        .skill-list li::before {
-            content: "•";
-            color: var(--primary);
-            margin-right: 0.5rem;
+        .certifications {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
         }
 
-        ul:not(.skill-list) {
-            padding-left: 1.25rem;
-            margin: 0.5rem 0;
-        }
-
-        ul:not(.skill-list) li {
-            margin: 0.25rem 0;
-            color: var(--gray-600);
-        }
-
-        .contact {
-            background: var(--primary);
-            color: white;
-            text-align: center;
-            padding: 2rem;
+        .cert-item {
+            background: var(--bg-secondary);
+            padding: 1rem;
             border-radius: 8px;
-            margin-top: 2rem;
+            border-left: 3px solid var(--primary);
         }
 
-        .contact h2 {
-            color: white;
-            margin-bottom: 0.5rem;
+        .cert-title {
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 0.25rem;
         }
 
-        .emoji {
-            font-style: normal;
+        .cert-date {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
         }
 
-        /* Responsive Design */
-        @media (max-width: 640px) {
-            .container {
-                padding: 0.75rem;
-            }
-            
-            h1 {
-                font-size: 1.75rem;
-            }
-            
-            .subtitle {
-                font-size: 1rem;
-            }
-            
-            .profile-image {
-                width: 100px;
-                height: 100px;
-            }
-            
-            .section {
-                padding: 1rem;
-            }
-            
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .header {
-                padding: 2rem 0;
-            }
-        }
-
-        /* Print Styles */
-        @media print {
-            body {
-                background: white;
-                color: black;
-            }
-            
-            .section {
-                box-shadow: none;
-                border: 1px solid #e5e5e5;
-            }
-            
-            .contact {
-                background: white;
-                color: black;
-                border: 1px solid #e5e5e5;
-            }
-        }
-
-        /* Dark mode support */
+        /* Dark mode */
         @media (prefers-color-scheme: dark) {
             :root {
-                --gray-50: #111827;
-                --gray-100: #1f2937;
-                --gray-600: #9ca3af;
-                --gray-800: #f3f4f6;
-                --gray-900: #ffffff;
-            }
-            
-            body {
-                background: var(--gray-50);
-            }
-            
-            .section {
-                background: var(--gray-100);
-            }
-            
-            .skill-group,
-            .tech-stack {
-                background: #374151;
+                --bg: #0f172a;
+                --bg-secondary: #1e293b;
+                --text: #f1f5f9;
+                --text-secondary: #94a3b8;
+                --accent: #f1f5f9;
+                --border: #334155;
             }
         }
 
-        /* Accessibility */
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 1rem;
             }
-        }
 
-        /* Focus styles for accessibility */
-        :focus-visible {
-            outline: 2px solid var(--primary);
-            outline-offset: 2px;
+            .sidebar {
+                position: static;
+            }
+
+            .profile-image {
+                width: 120px;
+                height: 120px;
+            }
+
+            .nav-container {
+                padding: 0 1rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .item-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .item-date {
+                margin-left: 0;
+                margin-top: 0.25rem;
+            }
         }
     </style>
 </head>
 <body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Matteo Tarocco</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+        </div>
+    </nav>
+
     <div class="container">
-        <header class="header">
-            <img src="assets/images/profile.jpg" alt="Matteo Tarocco's professional headshot" class="profile-image">
-            <h1>Matteo Tarocco</h1>
-            <p class="subtitle">Software Architect & Full-Stack Developer</p>
-        </header>
+        <aside class="sidebar">
+            <div class="profile">
+                <img src="assets/images/profile.jpg" alt="Matteo Tarocco" class="profile-image">
+                <h1>Matteo Tarocco</h1>
+                <p class="title">Software Architect & Full-Stack Developer</p>
+                <p class="bio">
+                    Software Architect specializing in AI, full-stack development, and cloud infrastructure. 
+                    Currently developing innovative AI solutions at aitomotivelab, combining hands-on engineering 
+                    with deep systems knowledge from low-level programming to high-level architecture.
+                </p>
+                <div class="social-links">
+                    <a href="#linkedin">LinkedIn</a>
+                    <a href="#github">GitHub</a>
+                    <a href="#email">Email</a>
+                </div>
+            </div>
+        </aside>
 
-        <main>
-            <section class="section">
-                <h2><span class="emoji">👤</span>About</h2>
-                <p>Software Architect with expertise in full-stack development, artificial intelligence, and cloud infrastructure. Currently developing innovative AI solutions at aitomotivelab, combining hands-on engineering with deep systems knowledge.</p>
-            </section>
-
-            <section class="section">
-                <h2><span class="emoji">💼</span>Experience</h2>
+        <main class="main-content">
+            <section id="experience" class="section">
+                <h2>Experience</h2>
                 
-                <div class="job">
-                    <div class="job-title">Software Architect</div>
-                    <div class="company">aitomotivelab</div>
-                    <div class="date">Mar 2025 – Present • Verona (Hybrid)</div>
-                    <div class="tech-stack">
-                        <strong>Tech:</strong> Node.js, AI, TensorFlow, Mobile AI, Object Detection, REST APIs, Cloud
+                <div class="experience-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">Software Architect</div>
+                            <div class="item-company">aitomotivelab</div>
+                        </div>
+                        <div class="item-date">Mar 2025 – Present</div>
+                    </div>
+                    <div class="item-description">
+                        Developing innovative AI solutions for automotive applications, focusing on mobile AI and object detection systems.
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">TensorFlow</span>
+                        <span class="tech-tag">Mobile AI</span>
+                        <span class="tech-tag">Object Detection</span>
+                        <span class="tech-tag">REST APIs</span>
+                        <span class="tech-tag">Cloud</span>
                     </div>
                 </div>
 
-                <div class="job">
-                    <div class="job-title">Full-Stack Developer</div>
-                    <div class="company">Terranova Software</div>
-                    <div class="date">Nov 2021 – Apr 2022 • Verona (Hybrid)</div>
-                    <ul>
-                        <li>Backend development & VM deployment</li>
-                        <li>HTTP/HTTPS & FTP configuration</li>
-                        <li>MySQL database design</li>
-                        <li>Frontend development with HTML5, JavaScript</li>
-                    </ul>
+                <div class="experience-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">Full-Stack Developer</div>
+                            <div class="item-company">Terranova Software</div>
+                        </div>
+                        <div class="item-date">Nov 2021 – Apr 2022</div>
+                    </div>
+                    <div class="item-description">
+                        Led backend development and VM deployment, configured HTTP/HTTPS & FTP services, designed MySQL databases, and developed frontend applications.
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">VMware</span>
+                        <span class="tech-tag">Ubuntu Server</span>
+                    </div>
                 </div>
 
-                <div class="job">
-                    <div class="job-title">IT Intern</div>
-                    <div class="company">Nova Systems - Software BeOne</div>
-                    <div class="date">May 2021 – Jun 2021 • Verona (Hybrid)</div>
-                    <ul>
-                        <li>ERP installation & security setup</li>
-                        <li>VMware vSphere 6 administration</li>
-                        <li>Database design & customer support</li>
-                    </ul>
+                <div class="experience-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">IT Intern</div>
+                            <div class="item-company">Nova Systems - Software BeOne</div>
+                        </div>
+                        <div class="item-date">May 2021 – Jun 2021</div>
+                    </div>
+                    <div class="item-description">
+                        ERP installation, security setup, VMware vSphere administration, and database design with customer support responsibilities.
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">VMware vSphere</span>
+                        <span class="tech-tag">Kaspersky</span>
+                        <span class="tech-tag">Database Design</span>
+                    </div>
                 </div>
             </section>
 
-            <section class="section">
-                <h2><span class="emoji">🎓</span>Education</h2>
-                <div class="job-title">University of Verona</div>
-                <p><strong>Focus:</strong> Software Engineering, Operating Systems, Computer Networks, Database Systems, Image Processing, C/Assembly Programming</p>
+            <section id="education" class="section">
+                <h2>Education</h2>
+                <div class="education-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">Computer Science</div>
+                            <div class="item-company">University of Verona</div>
+                        </div>
+                        <div class="item-date">2019 – 2022</div>
+                    </div>
+                    <div class="item-description">
+                        <strong>Focus:</strong> Software Engineering, Operating Systems, Computer Networks, Database Systems, Image Processing, C/Assembly Programming
+                    </div>
+                </div>
             </section>
 
-            <section class="section">
-                <h2><span class="emoji">🏆</span>Certifications</h2>
-                <ul>
-                    <li><strong>Cisco CCNA:</strong> Introduction to Networks (2022)</li>
-                    <li><strong>Cisco IT Essentials</strong> (2021)</li>
-                </ul>
+            <section id="certifications" class="section">
+                <h2>Certifications</h2>
+                <div class="certifications">
+                    <div class="cert-item">
+                        <div class="cert-title">Cisco CCNA: Introduction to Networks</div>
+                        <div class="cert-date">June 2022</div>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-title">Cisco IT Essentials</div>
+                        <div class="cert-date">June 2021</div>
+                    </div>
+                </div>
             </section>
 
-            <section class="section">
-                <h2><span class="emoji">🛠</span>Technical Skills</h2>
+            <section id="skills" class="section">
+                <h2>Technical Skills</h2>
                 <div class="skills-grid">
-                    <div class="skill-group">
+                    <div class="skill-category">
                         <h4>Languages</h4>
                         <ul class="skill-list">
                             <li>Python</li>
@@ -360,7 +479,7 @@ title: Matteo Tarocco - Software Architect
                         </ul>
                     </div>
                     
-                    <div class="skill-group">
+                    <div class="skill-category">
                         <h4>AI & ML</h4>
                         <ul class="skill-list">
                             <li>TensorFlow</li>
@@ -370,7 +489,7 @@ title: Matteo Tarocco - Software Architect
                         </ul>
                     </div>
                     
-                    <div class="skill-group">
+                    <div class="skill-category">
                         <h4>Frameworks</h4>
                         <ul class="skill-list">
                             <li>Node.js</li>
@@ -380,7 +499,7 @@ title: Matteo Tarocco - Software Architect
                         </ul>
                     </div>
                     
-                    <div class="skill-group">
+                    <div class="skill-category">
                         <h4>Infrastructure</h4>
                         <ul class="skill-list">
                             <li>VMware vSphere</li>
@@ -392,11 +511,33 @@ title: Matteo Tarocco - Software Architect
                 </div>
             </section>
         </main>
-
-        <footer class="contact">
-            <h2><span class="emoji">📫</span>Get in Touch</h2>
-            <p>Open to discussing opportunities, collaborations, and innovative projects.</p>
-        </footer>
     </div>
+
+    <script>
+        function toggleTheme() {
+            const root = document.documentElement;
+            const themeToggle = document.querySelector('.theme-toggle');
+            
+            if (root.style.getPropertyValue('--bg') === '#0f172a') {
+                // Switch to light mode
+                root.style.setProperty('--bg', '#ffffff');
+                root.style.setProperty('--bg-secondary', '#f8fafc');
+                root.style.setProperty('--text', '#0f172a');
+                root.style.setProperty('--text-secondary', '#64748b');
+                root.style.setProperty('--accent', '#0f172a');
+                root.style.setProperty('--border', '#e2e8f0');
+                themeToggle.textContent = '🌙';
+            } else {
+                // Switch to dark mode
+                root.style.setProperty('--bg', '#0f172a');
+                root.style.setProperty('--bg-secondary', '#1e293b');
+                root.style.setProperty('--text', '#f1f5f9');
+                root.style.setProperty('--text-secondary', '#94a3b8');
+                root.style.setProperty('--accent', '#f1f5f9');
+                root.style.setProperty('--border', '#334155');
+                themeToggle.textContent = '☀️';
+            }
+        }
+    </script>
 </body>
 </html> 
