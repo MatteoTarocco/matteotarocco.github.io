@@ -1,0 +1,333 @@
+---
+layout: default
+title: Matteo Tarocco - Software Architect
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            margin-bottom: 1rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .header h1 {
+            margin: 0.5rem 0 0.2rem 0;
+            font-size: 2.5rem;
+            font-weight: 600;
+        }
+
+        .header h2 {
+            margin: 0;
+            font-size: 1.3rem;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        .section {
+            margin: 2.5rem 0;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-left: 4px solid #667eea;
+        }
+
+        .section h2 {
+            color: #667eea;
+            margin-top: 0;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .section h3 {
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .job-title {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .company {
+            color: #667eea;
+            font-weight: 500;
+        }
+
+        .date {
+            color: #666;
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+
+        .technologies {
+            background: #f8f9ff;
+            padding: 0.8rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border-left: 3px solid #667eea;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .skill-category {
+            background: #f8f9ff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-top: 3px solid #667eea;
+        }
+
+        .skill-category h4 {
+            margin-top: 0;
+            color: #667eea;
+            font-size: 1.1rem;
+        }
+
+        .skill-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .skill-list li {
+            padding: 0.3rem 0;
+            color: #555;
+        }
+
+        .skill-list li:before {
+            content: "▪ ";
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .contact-section {
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 3rem;
+        }
+
+        .emoji {
+            font-size: 1.5rem;
+            margin-right: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .profile-image {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="assets/images/profile.jpg" alt="Matteo Tarocco" class="profile-image">
+        <h1>Matteo Tarocco</h1>
+        <h2>Software Architect & Full-Stack Developer</h2>
+    </div>
+
+    <div class="section">
+        <h2><span class="emoji">👤</span>Professional Summary</h2>
+        <p>Software Architect with a solid foundation in full-stack development, artificial intelligence, and cloud infrastructure. Currently working on innovative AI projects at aitomotivelab. Combining hands-on engineering with academic depth in systems and software design, with a strong grasp from low-level programming to high-level architecture.</p>
+    </div>
+
+    <div class="section">
+        <h2><span class="emoji">💼</span>Professional Experience</h2>
+        
+        <h3 class="job-title">Software Architect</h3>
+        <p><span class="company">aitomotivelab</span> · Full-time<br>
+        <span class="date">Mar 2025 – Present · Verona (Hybrid)</span></p>
+        <div class="technologies">
+            <strong>Technologies:</strong> Node.js, AI, TensorFlow, Mobile AI, Object Detection, REST APIs, Cloud
+        </div>
+
+        <h3 class="job-title">Full-Stack Developer (School Project)</h3>
+        <p><span class="company">Terranova Software</span> · Internship<br>
+        <span class="date">Nov 2021 – Apr 2022 · Verona (Hybrid)</span></p>
+        <ul>
+            <li>Backend development</li>
+            <li>VM (Ubuntu Server) deployment</li>
+            <li>Configuration of HTTP/HTTPS, FTP</li>
+            <li>MySQL database design</li>
+            <li>Frontend with HTML5, JavaScript</li>
+            <li>Project management</li>
+            <li>VMware environments</li>
+        </ul>
+
+        <h3 class="job-title">IT Intern</h3>
+        <p><span class="company">Nova Systems - Software BeOne</span> · Internship<br>
+        <span class="date">May 2021 – Jun 2021 · Verona (Hybrid)</span></p>
+        <ul>
+            <li>BeOne ERP installation</li>
+            <li>Kaspersky Endpoint Security setup</li>
+            <li>Customer ticket management</li>
+            <li>IBM i 5250 emulator installation</li>
+            <li>VMware vSphere 6 introduction</li>
+            <li>Relational DB design using Access and Lucidchart</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2><span class="emoji">🎓</span>Education</h2>
+        <h3>University of Verona</h3>
+        <p><strong>Focus Areas:</strong></p>
+        <ul>
+            <li>Software Engineering</li>
+            <li>Operating Systems</li>
+            <li>Computer Networks</li>
+            <li>Database Systems</li>
+            <li>Image Processing</li>
+            <li>Programming in C and Assembly</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2><span class="emoji">🏆</span>Certifications</h2>
+        <ul>
+            <li><strong>Cisco CCNA: Introduction to Networks</strong> (Issued: Jun 2022)</li>
+            <li><strong>Cisco IT Essentials</strong> (Issued: Jun 2021)</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2><span class="emoji">🔧</span>Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h4>Programming Languages</h4>
+                <ul class="skill-list">
+                    <li>Python</li>
+                    <li>Java</li>
+                    <li>JavaScript</li>
+                    <li>HTML</li>
+                    <li>C</li>
+                    <li>Assembly</li>
+                    <li>SQL</li>
+                </ul>
+            </div>
+            
+            <div class="skill-category">
+                <h4>Software & Frameworks</h4>
+                <ul class="skill-list">
+                    <li>Node.js</li>
+                    <li>TensorFlow</li>
+                    <li>Django</li>
+                    <li>Expo (Mobile Development)</li>
+                    <li>PHP</li>
+                    <li>MySQL</li>
+                    <li>REST APIs</li>
+                    <li>VMware (vSphere, ESX)</li>
+                </ul>
+            </div>
+            
+            <div class="skill-category">
+                <h4>AI & Machine Learning</h4>
+                <ul class="skill-list">
+                    <li>Machine Learning</li>
+                    <li>Mobile AI Development</li>
+                    <li>Object Detection</li>
+                    <li>Image Processing</li>
+                    <li>Artificial Intelligence</li>
+                </ul>
+            </div>
+            
+            <div class="skill-category">
+                <h4>Networking & Security</h4>
+                <ul class="skill-list">
+                    <li>Cisco Networking</li>
+                    <li>Network Administration</li>
+                    <li>Network Security</li>
+                    <li>Network Design</li>
+                    <li>Domain Controllers</li>
+                    <li>Cloud & Network Security</li>
+                    <li>Kaspersky Endpoint Security</li>
+                    <li>Cloudflare</li>
+                </ul>
+            </div>
+            
+            <div class="skill-category">
+                <h4>Tools & Platforms</h4>
+                <ul class="skill-list">
+                    <li>Git</li>
+                    <li>VMware</li>
+                    <li>Microsoft Office</li>
+                    <li>Lucidchart</li>
+                    <li>IBM AS/400, iSeries</li>
+                    <li>5250 Emulation</li>
+                    <li>Ubuntu Server</li>
+                </ul>
+            </div>
+            
+            <div class="skill-category">
+                <h4>Methodologies & Practices</h4>
+                <ul class="skill-list">
+                    <li>Agile Methodologies</li>
+                    <li>Project Management</li>
+                    <li>Software Architecture</li>
+                    <li>Full-Stack Development</li>
+                    <li>Troubleshooting & Diagnostics</li>
+                    <li>Hardware Configuration</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-section">
+        <h2><span class="emoji">📫</span>Contact</h2>
+        <p>Feel free to reach out to discuss opportunities, collaborations, or just to connect!</p>
+    </div>
+</body>
+</html> 

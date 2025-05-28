@@ -3,8 +3,40 @@ layout: default
 title: Matteo Tarocco - Software Architect
 ---
 
-# Matteo Tarocco
-## Software Architect & Full-Stack Developer
+<style>
+.profile-container {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.profile-image {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border: 4px solid #e1e1e1;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin-bottom: 1rem;
+}
+
+.profile-title {
+  margin-top: 1rem;
+  color: #333;
+}
+
+@media (max-width: 600px) {
+  .profile-image {
+    width: 150px;
+    height: 150px;
+  }
+}
+</style>
+
+<div class="profile-container">
+  <img src="assets/images/profile.jpg" alt="Matteo Tarocco" class="profile-image">
+  <h1 class="profile-title">Matteo Tarocco</h1>
+  <h2>Software Architect & Full-Stack Developer</h2>
+</div>
 
 ---
 
