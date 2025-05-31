@@ -1,0 +1,23 @@
+{
+  "name": "Matteo Tarocco - Software Architect",
+  "short_name": "Matteo Tarocco",
+  "description": "Software Architect specializing in AI, full-stack development, and cloud infrastructure",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#675494",
+  "icons": [
+    {
+      "src": "/assets/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+} 
