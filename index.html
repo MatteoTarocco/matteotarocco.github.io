@@ -767,11 +767,39 @@
     </footer>
 
     <script>
+        // Initialize theme based on system preference
+        function initializeTheme() {
+            const root = document.documentElement;
+            const themeToggle = document.querySelector('.theme-toggle');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            
+            if (prefersDark) {
+                // Set dark mode
+                root.style.setProperty('--bg', '#0f172a');
+                root.style.setProperty('--bg-secondary', '#1e293b');
+                root.style.setProperty('--text', '#f1f5f9');
+                root.style.setProperty('--text-secondary', '#94a3b8');
+                root.style.setProperty('--accent', '#f1f5f9');
+                root.style.setProperty('--border', '#334155');
+                themeToggle.textContent = '☀️';
+            } else {
+                // Set light mode
+                root.style.setProperty('--bg', '#ffffff');
+                root.style.setProperty('--bg-secondary', '#f8fafc');
+                root.style.setProperty('--text', '#0f172a');
+                root.style.setProperty('--text-secondary', '#64748b');
+                root.style.setProperty('--accent', '#0f172a');
+                root.style.setProperty('--border', '#e2e8f0');
+                themeToggle.textContent = '🌙';
+            }
+        }
+
         function toggleTheme() {
             const root = document.documentElement;
             const themeToggle = document.querySelector('.theme-toggle');
+            const isDark = getComputedStyle(root).getPropertyValue('--bg').trim() === '#0f172a';
             
-            if (root.style.getPropertyValue('--bg') === '#0f172a') {
+            if (isDark) {
                 // Switch to light mode
                 root.style.setProperty('--bg', '#ffffff');
                 root.style.setProperty('--bg-secondary', '#f8fafc');
@@ -791,6 +819,9 @@
                 themeToggle.textContent = '☀️';
             }
         }
+
+        // Initialize theme when page loads
+        document.addEventListener('DOMContentLoaded', initializeTheme);
 
         // Update copyright year
         document.getElementById('current-year').textContent = new Date().getFullYear();
